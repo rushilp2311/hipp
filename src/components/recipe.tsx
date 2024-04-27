@@ -78,6 +78,11 @@ export function Recipe() {
     }
   };
 
+  const handleServings = (serving: string) => {
+    console.log("called", serving);
+    setNoOfServings(+serving);
+  };
+
   const selectDietPreferences = (dietPref: any) => {
     if (selectedDietPreferences.includes(dietPref)) {
       setSelectedDietPreferences((prev) =>
@@ -292,17 +297,16 @@ export function Recipe() {
             <Label className="font-medium" htmlFor="servings">
               Number of Servings
             </Label>
-            <Select defaultValue={noOfServings.toString()}>
+            <Select
+              onValueChange={handleServings}
+              defaultValue={noOfServings.toString()}
+            >
               <SelectTrigger className="w-24">
                 <SelectValue placeholder="Select" />
               </SelectTrigger>
               <SelectContent>
                 {[2, 4, 6, 8, 10].map((serving) => (
-                  <SelectItem
-                    value={serving.toString()}
-                    key={serving}
-                    onClick={() => setNoOfServings(serving)}
-                  >
+                  <SelectItem value={serving.toString()} key={serving}>
                     {serving}
                   </SelectItem>
                 ))}

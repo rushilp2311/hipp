@@ -14,7 +14,9 @@ export async function getRecipes(formData: any) {
   prompt.push(
     "Also give the recipe a suitable name in its local language based on dietary preference."
   );
-  prompt.push("Provide the suitable amount based on the Number of Servings.");
+  prompt.push(
+    "Provide the suitable ingredients amount based on the Number of Servings."
+  );
 
   prompt.push(
     "Provide the content in HTML format. Please avoid adding DOCTYPE, HTML, BODY, HEAD  tags and \n in the response."
