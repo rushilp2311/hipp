@@ -113,7 +113,7 @@ export function Recipe() {
     setCustomIngredient("");
   };
 
-  const generateRecipe = async (e) => {
+  const generateRecipe = async (e: any) => {
     setLoading(true);
     e.preventDefault();
     if (selectedDietPreferences.length < 1 || selectedIngredients.length < 1) {
@@ -342,7 +342,7 @@ export function Recipe() {
   );
 }
 
-function ChevronsUpDownIcon(props) {
+function ChevronsUpDownIcon(props: any) {
   return (
     <svg
       {...props}
@@ -362,7 +362,7 @@ function ChevronsUpDownIcon(props) {
   );
 }
 
-function RefreshCwIcon(props) {
+function RefreshCwIcon(props: any) {
   return (
     <svg
       {...props}
