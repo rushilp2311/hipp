@@ -136,10 +136,10 @@ export function Recipe() {
       if (res) {
         setResult(res.replace(/(\r\n|\n|\r)/gm, ""));
       }
-    } catch (err) {
+    } catch (err: any) {
       toast({
         title: "Something went wrong",
-        description: err,
+        description: err?.message,
         variant: "destructive",
       });
     }
